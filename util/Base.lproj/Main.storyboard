@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,85 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="util" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IgC-Ue-Bcj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.38001383950000001" green="0.82905393549999995" blue="0.99950784439999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Testes" id="tlz-YJ-EFI"/>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite um Valor R$" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sBQ-Ex-Uw2">
+                                <rect key="frame" x="16" y="126" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite um CPF" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YHK-f7-fJs">
+                                <rect key="frame" x="16" y="172" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evQ-jF-oBZ">
+                                <rect key="frame" x="16" y="80" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="E25-J7-5fa"/>
+                                </constraints>
+                                <state key="normal" title="Navigation Transparente"/>
+                                <connections>
+                                    <action selector="deixarTransparente:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ply-4D-DtA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kS-o2-VPE">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Testar Tudo"/>
+                                <connections>
+                                    <action selector="testarTudo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sUk-sC-fNj"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite um E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8No-y0-Ymw">
+                                <rect key="frame" x="16" y="218" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8No-y0-Ymw" secondAttribute="trailing" constant="16" id="0GW-VN-I44"/>
+                            <constraint firstItem="YHK-f7-fJs" firstAttribute="top" secondItem="sBQ-Ex-Uw2" secondAttribute="bottom" constant="16" id="1Se-As-O2V"/>
+                            <constraint firstItem="8No-y0-Ymw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1gy-UH-Q3J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sBQ-Ex-Uw2" secondAttribute="trailing" constant="16" id="20q-Kd-ZRf"/>
+                            <constraint firstItem="sBQ-Ex-Uw2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7jg-hc-yoM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YHK-f7-fJs" secondAttribute="trailing" constant="16" id="D1o-yf-1de"/>
+                            <constraint firstItem="IgC-Ue-Bcj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="T8C-nc-bJB"/>
+                            <constraint firstItem="YHK-f7-fJs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="W1I-qe-8Om"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="evQ-jF-oBZ" secondAttribute="trailing" constant="16" id="ajP-Qm-ZkZ"/>
+                            <constraint firstItem="evQ-jF-oBZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bKC-Ix-vHY"/>
+                            <constraint firstItem="IgC-Ue-Bcj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dXx-2I-cc4"/>
+                            <constraint firstItem="sBQ-Ex-Uw2" firstAttribute="top" secondItem="evQ-jF-oBZ" secondAttribute="bottom" constant="16" id="e0Y-Qc-hDJ"/>
+                            <constraint firstItem="8No-y0-Ymw" firstAttribute="top" secondItem="YHK-f7-fJs" secondAttribute="bottom" constant="16" id="f9d-DB-ALV"/>
+                            <constraint firstItem="IgC-Ue-Bcj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h2v-G0-fDZ"/>
+                            <constraint firstItem="evQ-jF-oBZ" firstAttribute="top" secondItem="IgC-Ue-Bcj" secondAttribute="bottom" constant="16" id="lHf-Vj-Dns"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cpf" destination="YHK-f7-fJs" id="eJp-Ht-6B0"/>
+                        <outlet property="email" destination="8No-y0-Ymw" id="FPP-F8-hXR"/>
+                        <outlet property="nav" destination="IgC-Ue-Bcj" id="Mx8-yO-sGh"/>
+                        <outlet property="valor" destination="sBQ-Ex-Uw2" id="Aax-oc-IoT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
